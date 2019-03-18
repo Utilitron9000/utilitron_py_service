@@ -9,4 +9,4 @@ Install grpcio-tools `pip3 install grpcio-tools`
 Compile:
 `cd utilitron_py_service`
 `git submodule update --remote --merge`
-`python3 -m grpc_tools.protoc -I./utilitron_protos/src --python-out=. --grpc_python_out=. ./utilitron_protos/*`
+`python3 -m grpc_tools.protoc -I./utilitron_protos/src --python_out=. --grpc_python_out=. ./utilitron_protos/src/*`

@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x12test_service.proto\"\x1d\n\x05Point\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\"\x14\n\x12GetPositionRequest\"(\n\x13GetPositionResponse\x12\x11\n\x01p\x18\x01 \x01(\x0b\x32\x06.Point2M\n\x0fPositionService\x12:\n\x0bGetPosition\x12\x13.GetPositionRequest\x1a\x14.GetPositionResponse\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x12test_service.proto\"\x1d\n\x05Point\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\"\x14\n\x12GetPositionRequest2A\n\x0fPositionService\x12.\n\x0bGetPosition\x12\x13.GetPositionRequest\x1a\x06.Point\"\x00\x30\x01\x62\x06proto3')
 )
 
 
@@ -86,41 +86,8 @@ _GETPOSITIONREQUEST = _descriptor.Descriptor(
   serialized_end=73,
 )
 
-
-_GETPOSITIONRESPONSE = _descriptor.Descriptor(
-  name='GetPositionResponse',
-  full_name='GetPositionResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='p', full_name='GetPositionResponse.p', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=75,
-  serialized_end=115,
-)
-
-_GETPOSITIONRESPONSE.fields_by_name['p'].message_type = _POINT
 DESCRIPTOR.message_types_by_name['Point'] = _POINT
 DESCRIPTOR.message_types_by_name['GetPositionRequest'] = _GETPOSITIONREQUEST
-DESCRIPTOR.message_types_by_name['GetPositionResponse'] = _GETPOSITIONRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Point = _reflection.GeneratedProtocolMessageType('Point', (_message.Message,), dict(
@@ -137,13 +104,6 @@ GetPositionRequest = _reflection.GeneratedProtocolMessageType('GetPositionReques
   ))
 _sym_db.RegisterMessage(GetPositionRequest)
 
-GetPositionResponse = _reflection.GeneratedProtocolMessageType('GetPositionResponse', (_message.Message,), dict(
-  DESCRIPTOR = _GETPOSITIONRESPONSE,
-  __module__ = 'test_service_pb2'
-  # @@protoc_insertion_point(class_scope:GetPositionResponse)
-  ))
-_sym_db.RegisterMessage(GetPositionResponse)
-
 
 
 _POSITIONSERVICE = _descriptor.ServiceDescriptor(
@@ -152,8 +112,8 @@ _POSITIONSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=117,
-  serialized_end=194,
+  serialized_start=75,
+  serialized_end=140,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetPosition',
@@ -161,7 +121,7 @@ _POSITIONSERVICE = _descriptor.ServiceDescriptor(
     index=0,
     containing_service=None,
     input_type=_GETPOSITIONREQUEST,
-    output_type=_GETPOSITIONRESPONSE,
+    output_type=_POINT,
     serialized_options=None,
   ),
 ])

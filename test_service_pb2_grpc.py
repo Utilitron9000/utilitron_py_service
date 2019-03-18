@@ -14,10 +14,10 @@ class PositionServiceStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.GetPosition = channel.unary_unary(
+    self.GetPosition = channel.unary_stream(
         '/PositionService/GetPosition',
         request_serializer=test__service__pb2.GetPositionRequest.SerializeToString,
-        response_deserializer=test__service__pb2.GetPositionResponse.FromString,
+        response_deserializer=test__service__pb2.Point.FromString,
         )
 
 
@@ -35,10 +35,10 @@ class PositionServiceServicer(object):
 
 def add_PositionServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'GetPosition': grpc.unary_unary_rpc_method_handler(
+      'GetPosition': grpc.unary_stream_rpc_method_handler(
           servicer.GetPosition,
           request_deserializer=test__service__pb2.GetPositionRequest.FromString,
-          response_serializer=test__service__pb2.GetPositionResponse.SerializeToString,
+          response_serializer=test__service__pb2.Point.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

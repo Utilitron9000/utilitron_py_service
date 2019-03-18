@@ -7,7 +7,7 @@ import grpc
 import test_service_pb2
 import test_service_pb2_grpc
 
-_INCREMENT = 0.05
+_INCREMENT = 0.005
 _INTERVAL = 0.1
 
 _CIRCLE_RADIUS = 40
@@ -22,7 +22,6 @@ def get_point_on_circle(t):
 
 
 class PositionServiceServicer(test_service_pb2_grpc.PositionServiceServicer):
-
     def GetPosition(self, request, context):
         t = 0
         while t <= 1:
@@ -42,6 +41,7 @@ def serve():
     )
     server.add_insecure_port('[::]:50051')
     server.start()
+    print('Service started')
     try:
         while True:
             time.sleep(_ONE_DAY_IN_SECONDS)
