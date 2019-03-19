@@ -16,10 +16,10 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='test_service.proto',
-  package='',
+  package='endpoints.testservice',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x12test_service.proto\"\x1d\n\x05Point\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\"\x14\n\x12GetPositionRequest2A\n\x0fPositionService\x12.\n\x0bGetPosition\x12\x13.GetPositionRequest\x1a\x06.Point\"\x00\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x12test_service.proto\x12\x15\x65ndpoints.testservice\"\x1d\n\x05Point\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\"\x14\n\x12GetPositionRequest2m\n\x0fPositionService\x12Z\n\x0bGetPosition\x12).endpoints.testservice.GetPositionRequest\x1a\x1c.endpoints.testservice.Point\"\x00\x30\x01\x62\x06proto3')
 )
 
 
@@ -27,20 +27,20 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _POINT = _descriptor.Descriptor(
   name='Point',
-  full_name='Point',
+  full_name='endpoints.testservice.Point',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='x', full_name='Point.x', index=0,
+      name='x', full_name='endpoints.testservice.Point.x', index=0,
       number=1, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='y', full_name='Point.y', index=1,
+      name='y', full_name='endpoints.testservice.Point.y', index=1,
       number=2, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -58,14 +58,14 @@ _POINT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22,
-  serialized_end=51,
+  serialized_start=45,
+  serialized_end=74,
 )
 
 
 _GETPOSITIONREQUEST = _descriptor.Descriptor(
   name='GetPositionRequest',
-  full_name='GetPositionRequest',
+  full_name='endpoints.testservice.GetPositionRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -82,8 +82,8 @@ _GETPOSITIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=53,
-  serialized_end=73,
+  serialized_start=76,
+  serialized_end=96,
 )
 
 DESCRIPTOR.message_types_by_name['Point'] = _POINT
@@ -93,14 +93,14 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 Point = _reflection.GeneratedProtocolMessageType('Point', (_message.Message,), dict(
   DESCRIPTOR = _POINT,
   __module__ = 'test_service_pb2'
-  # @@protoc_insertion_point(class_scope:Point)
+  # @@protoc_insertion_point(class_scope:endpoints.testservice.Point)
   ))
 _sym_db.RegisterMessage(Point)
 
 GetPositionRequest = _reflection.GeneratedProtocolMessageType('GetPositionRequest', (_message.Message,), dict(
   DESCRIPTOR = _GETPOSITIONREQUEST,
   __module__ = 'test_service_pb2'
-  # @@protoc_insertion_point(class_scope:GetPositionRequest)
+  # @@protoc_insertion_point(class_scope:endpoints.testservice.GetPositionRequest)
   ))
 _sym_db.RegisterMessage(GetPositionRequest)
 
@@ -108,16 +108,16 @@ _sym_db.RegisterMessage(GetPositionRequest)
 
 _POSITIONSERVICE = _descriptor.ServiceDescriptor(
   name='PositionService',
-  full_name='PositionService',
+  full_name='endpoints.testservice.PositionService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=75,
-  serialized_end=140,
+  serialized_start=98,
+  serialized_end=207,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetPosition',
-    full_name='PositionService.GetPosition',
+    full_name='endpoints.testservice.PositionService.GetPosition',
     index=0,
     containing_service=None,
     input_type=_GETPOSITIONREQUEST,

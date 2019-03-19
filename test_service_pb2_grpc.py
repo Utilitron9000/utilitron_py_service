@@ -15,7 +15,7 @@ class PositionServiceStub(object):
       channel: A grpc.Channel.
     """
     self.GetPosition = channel.unary_stream(
-        '/PositionService/GetPosition',
+        '/endpoints.testservice.PositionService/GetPosition',
         request_serializer=test__service__pb2.GetPositionRequest.SerializeToString,
         response_deserializer=test__service__pb2.Point.FromString,
         )
@@ -42,5 +42,5 @@ def add_PositionServiceServicer_to_server(servicer, server):
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
-      'PositionService', rpc_method_handlers)
+      'endpoints.testservice.PositionService', rpc_method_handlers)
   server.add_generic_rpc_handlers((generic_handler,))
